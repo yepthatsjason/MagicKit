@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   s.public_header_files = '*.h'
 	s.resources = 'magic.mgc'
 	
-  s.frameworks = ['UIKit', 'CoreServices']
+  s.frameworks = ['UIKit', 'MobileCoreServices']
   s.libraries = "z"
   s.xcconfig = { "GCC_PREPROCESSOR_DEFINITIONS" => "$(inherited) HAVE_CONFIG_H=1" }
 
