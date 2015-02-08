@@ -24,5 +24,5 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <MagicKit/GEMagicKit.h>
-#import <MagicKit/GEMagicResult.h>
+#import <DRPMagicKitLight/GEMagicKit.h>
+#import <DRPMagicKitLight/GEMagicResult.h>

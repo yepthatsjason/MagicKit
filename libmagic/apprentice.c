@@ -84,7 +84,7 @@ const size_t file_nnames = FILE_NAMES_SIZE;
 
 private int getvalue(struct magic_set *ms, struct magic *, const char **, int);
 private int hextoint(int);
-private const char *getstr(struct magic_set *, struct magic *, const char *,
+private const char *_getstr(struct magic_set *, struct magic *, const char *,
     int);
 private int parse(struct magic_set *, struct magic_entry **, uint32_t *,
     const char *, size_t, int);
@@ -1887,7 +1887,7 @@ getvalue(struct magic_set *ms, struct magic *m, const char **p, int action)
 	case FILE_PSTRING:
 	case FILE_REGEX:
 	case FILE_SEARCH:
-		*p = getstr(ms, m, *p, action == FILE_COMPILE);
+		*p = _getstr(ms, m, *p, action == FILE_COMPILE);
 		if (*p == NULL) {
 			if (ms->flags & MAGIC_CHECK)
 				file_magwarn(ms, "cannot get string from `%s'",
@@ -1936,7 +1936,7 @@ getvalue(struct magic_set *ms, struct magic *m, const char **p, int action)
  * Return updated scan pointer as function result. Warn if set.
  */
 private const char *
-getstr(struct magic_set *ms, struct magic *m, const char *s, int warn)
+_getstr(struct magic_set *ms, struct magic *m, const char *s, int warn)
 {
 	const char *origs = s;
 	char	*p = m->value.s;

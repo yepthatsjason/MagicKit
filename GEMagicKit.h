@@ -24,7 +24,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <MagicKit/MagicKit.h>
+#import <MagicKit.h>
 
 @class GEMagicResult;
 
